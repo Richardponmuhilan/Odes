@@ -14,3 +14,29 @@ function toggleMenu() {
     nav.classList.toggle('active');
 }
 window.onload = loadServicesCards;
+
+
+
+    function forceClearCache() {
+        const timestamp = new Date().getTime();
+
+        // Update all CSS files
+        document.querySelectorAll('link[rel="stylesheet"]').forEach(link => {
+            link.href = link.href.split('?')[0] + '?v=' + timestamp;
+        });
+
+        // Update all JavaScript files
+        document.querySelectorAll('script').forEach(script => {
+            if (script.src) {
+                script.src = script.src.split('?')[0] + '?v=' + timestamp;
+            }
+        });
+
+        // Update all images
+        document.querySelectorAll('img').forEach(img => {
+            img.src = img.src.split('?')[0] + '?v=' + timestamp;
+        });
+    }
+
+    window.onload = forceClearCache;
+
