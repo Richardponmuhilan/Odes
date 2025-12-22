@@ -465,12 +465,24 @@ window.addEventListener('scroll', () => {
     header.classList.remove('header-solid');
   }
 });
-const toggle = document.querySelector('.nav-toggle');
-  const nav = document.querySelector('.main-nav');
+  const navToggle = document.querySelector('.nav-toggle');
+  const mainNav = document.querySelector('.main-nav');
+  const navLinks = document.querySelectorAll('.main-nav a');
 
-  toggle.addEventListener('click', () => {
-    nav.classList.toggle('open');
+  // Toggle menu
+  navToggle.addEventListener('click', () => {
+    mainNav.classList.toggle('open');
+    navToggle.classList.toggle('open');
   });
+
+  // Close menu on link click
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mainNav.classList.remove('open');
+      navToggle.classList.remove('open');
+    });
+  });
+
     </script>
     
 </html>
