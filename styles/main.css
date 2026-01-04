@@ -1050,4 +1050,12 @@
         position: relative;
       }
   }
-    
+    @media (max-width: 768px) {
+  .main-nav {
+    display: none;
+  }
+
+  .main-nav.open {
+    display: block;
+  }
+}
