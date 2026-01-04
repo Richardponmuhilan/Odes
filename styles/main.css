@@ -95,32 +95,81 @@
      HERO
   ========================= */
   .hero {
-    min-height: 100vh;
-    padding-top: 80px; /* header offset */
-    background: linear-gradient(
-      135deg,
-      var(--primary),
-      var(--primary-dark)
-    );
+    position: relative;
+    min-height: 90vh;
+    padding-top: 100px; /* header height */
     display: flex;
     align-items: center;
+  
+    /* BACKGROUND IMAGE */
+    background-image: url("../images/hero-bg.png"); /* <-- your image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
   
+  /* DARK OVERLAY for readability */
+  .hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    /* background: linear-gradient(
+      180deg,
+      rgba(0, 32, 96, 0.85),
+      rgba(0, 22, 58, 0.85)
+    ); */
+    background: linear-gradient(
+      90deg,
+      rgba(5, 20, 55, 0.85) 0%,
+      rgba(5, 20, 55, 0.7) 45%,
+      rgba(5, 20, 55, 0.45) 70%,
+      rgba(5, 20, 55, 0.2) 100%
+    );
+    z-index: 1;
+  }
+  
+  /* Ensure text sits above overlay */
   .hero-content {
-    max-width: 720px;
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    margin-left: 8%;
   }
   
+  /* HERO TEXT */
   .hero h1 {
-    font-size: 3.2rem;
-    font-weight: 600;
+    color: #ffffff;
+    font-size: clamp(2rem, 4vw, 3.2rem);
     line-height: 1.2;
-    color: var(--white);
+    margin-bottom: 16px;
   }
   
   .hero p {
-    margin-top: 24px;
-    font-size: 1.05rem;
-    color: rgba(255,255,255,0.85);
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+  
+  /* CTA */
+  .hero .btn-primary {
+    display: inline-block;
+    padding: 14px 28px;
+    /* background: #ffffff; */
+    color: #002060;
+    font-weight: 600;
+    border-radius: 6px;
+    text-decoration: none;
+  }
+  
+  @media (max-width: 768px) {
+    .hero {
+      padding-top: 96px; /* extra room for mobile header */
+      text-align: center;
+    }
+  
+    .hero-content {
+      margin: 0 auto;
+    }
   }
   
   /* =========================
@@ -196,7 +245,87 @@
   .about p {
     color: var(--text-muted);
   }
+  .about-banner {
+    position: relative;
+    min-height: 75vh;
+    width: 100%;
+    background-image: url("../images/about-banner.png"); /* your image */
+    background-size: cover;
+    background-position: center right;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+  }
+  .about-banner .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .aboutus-header {
+    text-align: center;
+    font-size: 2.4rem;
+    font-weight: 600;
+    margin-bottom: 48px;
+  }
   
+  .about-banner-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(5, 15, 30, 0.9) 0%,
+      rgba(5, 15, 30, 0.75) 35%,
+      rgba(5, 15, 30, 0.4) 65%,
+      rgba(5, 15, 30, 0.15) 100%
+    );
+    z-index: 1;
+  }
+  .about-banner-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 640px;
+    margin-left: 8%;
+  }
+  .about-banner-inner p {
+    color: #e5e7eb;
+    font-size: clamp(1.2rem, 2.2vw, 1.6rem);
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .about-banner-content {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    padding: 96px 24px;
+  }
+  
+  .about-banner h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+  
+  .about-banner p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  @media (max-width: 1024px) {
+    .about-banner {
+      min-height: 60vh;
+      background-position: center;
+    }
+  
+    .about-banner-inner {
+      margin: 0 auto;
+      text-align: center;
+      padding: 0 24px;
+    }
+  }
+    
   /* =========================
      CONTACT
   ========================= */

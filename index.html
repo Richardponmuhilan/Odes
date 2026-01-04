@@ -136,13 +136,32 @@
   
   
   
-
+<!-- FULL-WIDTH ABOUT BANNER -->
+<section id="about">
+  <div class="container">
+    <h2 class="aboutus-header">About ODES</h2>
+  </div>
+  <section class="about-banner">
+    <div class="about-banner-overlay"></div>
+  
+    <div class="about-banner-inner">
+      <p>
+        20 YEARS OF PROFESSIONAL<br>
+        EXPERTISE IN THE AUTOMOTIVE,<br>
+        MOBILITY, ENERGY AND<br>
+        DOMESTIC APPLIANCE<br>
+        SECTORS
+      </p>
+    </div>
+  </section>
+  
   <!-- ABOUT -->
-  <section class="about" id="about">
+  <section class="about" >
     <div class="container about-content">
   
-      <h2>About ODES</h2>
-  
+     
+    
+      
       <p>
         ODES is an independent engineering consulting firm specializing in
         design and engineering services, built on strong technical capability
@@ -263,7 +282,7 @@
     </div>
   </section>
   
-  
+</section>
 
   <!-- CONTACT -->
   <section class="contact" id="contact">
@@ -386,7 +405,7 @@
   <!-- FOOTER -->
   <footer class="site-footer">
     <div class="container">
-      <p>© 2025 Oli Design and Engineering Solutions. All rights reserved.</p>
+      <p>© 2026 Oli Design and Engineering Solutions. All rights reserved.</p>
     </div>
   </footer>
 
@@ -467,9 +486,18 @@ window.addEventListener('scroll', () => {
 });
 const toggle = document.querySelector('.nav-toggle');
   const nav = document.querySelector('.main-nav');
+  const navLinks = nav.querySelectorAll('a');
 
   toggle.addEventListener('click', () => {
     nav.classList.toggle('open');
+    toggle.classList.toggle('active');
+  });
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      nav.classList.remove('open');
+      toggle.classList.remove('active');
+    });
   });
     </script>
     
