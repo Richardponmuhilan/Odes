@@ -1,4 +1,32 @@
 /* =========================
+   FORCE LIGHT MODE ONLY
+========================= */
+:root {
+  color-scheme: light;
+}
+
+
+
+html, body {
+  background-color: var(--white);
+  color: var(--text-dark);
+}
+
+/* =========================
+   DISABLE DARK MODE OVERRIDES
+========================= */
+@media (prefers-color-scheme: dark) {
+  html, body {
+    background-color: var(--white) !important;
+    color: var(--text-dark) !important;
+  }
+
+  * {
+    background-color: initial;
+    color: inherit;
+  }
+}
+/* =========================
    DESIGN SYSTEM
 ========================= */
 :root {
