@@ -5,13 +5,12 @@
 :root {
   color-scheme: light only;
 }
-html {
-  background-color: #ffffff;
+
+html,
+body {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
   forced-color-adjust: none;
-}
-html, body {
-  background-color: var(--white);
-  color: var(--text-dark);
 }
 
 
